@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 # Logs
 logs
 *.log
@@ -106,4 +107,5 @@ dist
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
 package-lock.json
-videos
+uploads
+static

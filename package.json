@@ -22,9 +22,11 @@
     "express-session": "^1.17.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "helmet": "^3.21.2",
+    "localtunnel": "^2.0.0",
     "mongoose": "^5.8.7",
     "morgan": "^1.9.1",
     "multer": "^1.4.2",
+    "ngrok": "^3.2.7",
     "node-sass": "^4.13.1",
     "passport": "^0.4.1",
     "passport-facebook": "^3.0.0",
@@ -40,7 +42,8 @@
   "scripts": {
     "dev:server": "nodemon --exec babel-node init.js --delay 2 --ignore 'scss'",
     "dev:assets": "cross-env WEBPACK_ENV=development webpack --mode development -w",
-    "build:assets": "WEBPACK_ENV=production webpack --mode production"
+    "build:assets": "WEBPACK_ENV=production webpack --mode production",
+    "ngrok": "ngrok http 4000"
   },
   "devDependencies": {
     "eslint-config-airbnb-base": "^14.0.0",
