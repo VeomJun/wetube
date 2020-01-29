@@ -1,8 +1,8 @@
 import passport from "passport";
 import GithubStrategy from "passport-github";
-import FacebookStrategy from "passport-facebook";
+import KakaoStrategy from "passport-kakao";
 import User from "./models/User";
-import { githubLoginCallback, facebookLoginCallback } from "./controllers/userController";
+import { githubLoginCallback, kakaoLoginCallback } from "./controllers/userController";
 import routes from "./routes";
 
 // passport.use는 passport에게 strategy를 사용하라는 명령으로, 괄호 안에 해당되는 strategy가 들어간다.
@@ -21,16 +21,15 @@ passport.use(
     githubLoginCallback
   )
 );
-https: passport.use(
-  new FacebookStrategy(
+
+passport.use(
+  new KakaoStrategy(
     {
-      clientID: process.env.FB_ID,
-      clientSecret: process.env.FB_SECRET,
-      callbackURL: `https://e174b02b.ngrok.io${routes.facebookCallback}`,
-      profileFields: ["id", "displayName", "photos", "email"],
-      scope: ["public_profile", "email"]
+      clientID: process.env.KO_ID,
+      clientSecret: process.env.KO_SECRET,
+      callbackURL: `http://localhost:4000${routes.kakaoCallback}`
     },
-    facebookLoginCallback
+    kakaoLoginCallback
   )
 );
 
